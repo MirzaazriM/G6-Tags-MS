@@ -1,0 +1,27 @@
+# home
+root:
+    path: /
+    defaults:
+        resource: "landing"
+    methods: [GET, POST]
+
+tags:
+    path: /{resource}{slash}
+    requirements:
+        resource: "tags"
+        slash: "[/]{0,1}"
+    methods: [GET, POST, PUT, DELETE]
+
+tag-action:
+    path: /{resource}{slash}{action}
+    requirements:
+        resource: "tags"
+        slash: "[/]{0,1}"
+    methods: [GET, POST, PUT, DELETE]
+
+monolog:
+    path: /{resource}{slash}{action}
+    requirements:
+        resource: "monolog"
+        slash: "[/]{0,1}"
+    methods: [GET, POST, PUT, DELETE]
